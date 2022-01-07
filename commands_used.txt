@@ -1,0 +1,26 @@
+
+--This project is also focused on laravel notification---
+--Here user will get new user registration, and new product added notification---
+
+composer create-project laravel/laravel notification
+
+composer require laravel/ui
+php artisan ui bootstrap --auth
+npm install && npm run dev
+mv server.php index.php
+cp public/.htaccess .
+
+--crate notification table---
+php artisan notifications:table
+
+---create register notification----
+php artisan make:notification RegisterNotification
+
+--create notification controller---
+php artisan make:controller NotificationController -r
+
+
+--create all tables in database---
+php artisan migrate
+--update mail credentials---
+
